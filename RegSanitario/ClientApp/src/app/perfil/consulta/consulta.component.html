@@ -1,0 +1,35 @@
+<div id = "form1" class="container fadeIn animated" style="margin-top: 5px;" style="display: block">
+
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Identificacion Dueño</th>
+                <th scope="col">Dueño</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Direccion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let restaurante of restaurantes;index as i">
+                <th scope="row" >{{ i+1 }} </th>
+                <td>{{ restaurante.identificaciondueno }}</td>
+                <td>{{ restaurante.dueno }}</td>
+                <td>{{ restaurante.nombrerestaurante}}</td>
+                <td>{{ restaurante.direccion }}</td>
+                <button class="btn btn-success"(click)="showr()">Mas</button>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id = "form2" class="container fadeIn animated" style="margin-top: 5px;" style="display: none">
+
+<h5>Nombre Restaurante : </h5><input data-ng-model="restaurante.nombrerestaurante" />
+<h5>Nombre Dueño : </h5><input data-ng-model="restaurante.dueno" />
+
+
+ <button class="btn btn-success"(click)="showm()">Atras</button>
+
+</div>

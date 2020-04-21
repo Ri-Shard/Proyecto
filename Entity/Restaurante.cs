@@ -10,5 +10,10 @@ namespace Entity
         public string Direccion { get; set; }
         public string Evaluacion { get; set; }
 
+        public void Evaluacio() 
+         { 
+            Evaluacion = "Pendiente";
+             }
+        
     }
 }

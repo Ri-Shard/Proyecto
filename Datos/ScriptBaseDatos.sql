@@ -6,7 +6,7 @@ CREATE TABLE [dbo].[Restaurantes](
     [IdentificacionDueño] [nvarchar] (10) NOT NULL PRIMARY KEY,
 	[NombreRestaurante] [nvarchar](50) NULL,
 	[Direccion] [nvarchar](20) NULL,
-	[Evaluacion] [int] NULL,
+	[Evaluacion] [nvarchar] (15)NULL,
 ) 
 GO
 

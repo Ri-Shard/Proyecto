@@ -1,7 +1,8 @@
 <div class="container fadeIn animated" style="max-width: 18cm;">
-        <div class="row">
+
+    <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h2>Registro</h2>
+            <h1>Registro</h1>
             <form >
                 <h5>Seleccione tipo a registrar </h5>
 
@@ -9,35 +10,39 @@
                 <button name="Restaurante"  class="btn btn-dark" (click)="showm()">Manipulador</button>
 
                 <hr />
-                <div id="formrest"  class="form-group" style="display: none">
-
-                    <label>Identificacion</label>
-                          <input type="text"  name="identificacion"  [(ngModel)]="restaurante.identificaciondueno" class="form-control"  />
-
-                    <label>Nombre Dueño</label>
-                          <input type="text"  name="nombre"  [(ngModel)]="restaurante.dueno" class="form-control"  />
-                
-                    <label>Nombre Restaurante</label>
-                         <input type="text"  name="nombreres"  [(ngModel)]="restaurante.nombrerestaurante" class="form-control"  />
-
-                     <label>Direccion</label>
-                          <input type="text"  name="direccion"  [(ngModel)]="restaurante.direccion" class="form-control"  />
-                                   
-                     <div class="text-center">
-                        <button class="btn btn-success"(click)="agregar()">Registrar</button>
-                        <button class="btn btn-danger" type="reset">Cancelar</button>
+                <div id="formrest"   class="form-group" style="display: none">
+                    <div class="form-group">
+                        <label>Identificacion</label>
+                        <input type="text"   name="identificacion"   [(ngModel)]="restaurante.identificaciondueno"  class="form-control"   />
                     </div>
-                </div>
-
-                    <div id="formman"   class="form-group" style="display: none">
-
-                         <h5>Solo tengo programado con restaurante</h5>
-
+                    <div class="form-group">
+                        <label>Nombre Dueño</label>
+                        <input type="text"   name="nombre"   [(ngModel)]="restaurante.dueno"  class="form-control"   />
                     </div>
-               
-            </form>
-                    
-        </div>
-            
-    </div>
-</div>
+                    <div class="form-group">
+
+                        <label>Nombre Restaurante</label>
+                        <input type="text"   name="nombreres"   [(ngModel)]="restaurante.nombrerestaurante"  class="form-control"   />
+                    </div>
+                    <div class="form-group">
+                        <label>Direccion</label>    <input type="text"   name="direccion"   [(ngModel)]="restaurante.direccion"  class="form-control"   />
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-success" (click)="agregar()">Registrar</button>
+                            <button class="btn btn-danger"  type="reset">Cancelar</button>
+                                </div>
+                                </div>
+
+                                <div id="formman"   class="form-group" style="display: none">
+
+
+                                    <h5>Solo tengo programado con restaurante</h5>
+
+                                </div>
+
+                                </form>
+
+                                </div>
+
+                                </div>
+                                </div>

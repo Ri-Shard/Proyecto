@@ -20,6 +20,7 @@ namespace Logica
         {
             try
             {
+                restaurante.Evaluacio();
                 _conexion.Open();
                 _repositorio.Guardar(restaurante);
                 _conexion.Close();

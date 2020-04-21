@@ -47,7 +47,7 @@ namespace RegSanitario.Controllers
           restaurante.IdentificacionDueno = restauranteInput.IdentificacionDueno;
           restaurante.NombreRestaurante = restauranteInput.NombreRestaurante;
           restaurante.Direccion = restauranteInput.Direccion;
-          
+          restaurante.Evaluacion = restauranteInput.Evaluacion;
           return restaurante;
       }
     }

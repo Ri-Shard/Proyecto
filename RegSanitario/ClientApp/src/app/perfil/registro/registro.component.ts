@@ -27,7 +27,7 @@ export class RegistroComponent implements OnInit {
         this.restaurante = p;
         alert('Guardado Correctamente');
       }else{
-        alert('Error Campos Vacios');
+        alert('Error');
 
       }
     });

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { templateJitUrl } from '@angular/compiler';
+import {Restaurante} from '../models/restaurante';
+import { RestauranteService } from '../../services/restaurante.service';
 
 @Component({
   selector: 'app-restaurante',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestauranteComponent implements OnInit {
 
-  constructor() { }
+  restaurante: Restaurante;
+  constructor(private _restauranteService: RestauranteService) {
+    this.restaurante = new Restaurante();
+   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.restaurante = new Restaurante();
   }
 
+  agregar() {
+    console.log(this.restaurante);
+    this._restauranteService.post(this.restaurante).subscribe(p => {
+      if (p != null) {
+        this.restaurante = p;
+        alert('Guardado Correctamente');
+      } else {
+        alert('Error');
+
+      }
+    });
+  }
 }

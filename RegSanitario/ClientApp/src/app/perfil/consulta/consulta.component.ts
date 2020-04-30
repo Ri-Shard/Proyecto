@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ConsultaComponent implements OnInit {
 
   restaurantes : Restaurante[];
+  restaurante : Restaurante;
   constructor(private _restauranteService : RestauranteService,
     private router: Router
     ) { }

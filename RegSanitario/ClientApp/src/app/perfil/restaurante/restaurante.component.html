@@ -1,1 +1,69 @@
-<p>restaurante works!</p>
+<div class="container fadeIn animated" style="max-width: 20cm;">
+    <div class="card">
+        <div class="card-header text-md-center">
+            <h2>Registrar Establecimiento </h2>
+        </div>
+        <div class="card-body">
+            <h6>Informacion Restaurante</h6>
+            <hr />
+            <div class="row">
+                <div class="col-sm-2" style="max-width:100%">
+                    <p>NIT: </p>
+                </div>
+                <div class="col-sm-4" style="max-width:100%">
+                    <input type="text" style="text-transform: uppercase"   name="nit"   [(ngModel)]="restaurante.nit"  class="form-control" tabindex="17"   />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2" style="max-width:100%">
+                    <p>Nombre Restaurante: </p>
+                </div>
+                <div class="col-sm-4" style="max-width:100%">
+                    <input type="text"   name="nombreres" maxlength="50"   [(ngModel)]="restaurante.nombreRestaurante"  class="form-control"  tabindex="17" />
+                </div>
+                <div class="col-sm-2" style="max-width:100%">
+                    <p>Direccion: </p>
+                </div>
+                <div class="col-sm-4" style="max-width:100%">
+                    <input type="text"   name="direccion"  maxlength="50"  [(ngModel)]="restaurante.direccion"  class="form-control"  tabindex="17" />
+                </div>
+            </div>
+            <hr />
+            <h6>Informacion Dueño</h6>
+            <hr />
+            <div class="row">
+                <div class="col-sm-2" style="max-width:100%">
+                    <p>Identificacion: </p>
+                </div>
+                <div class="col-sm-4" style="max-width:100%">
+                    <input type="text" style="text-transform: uppercase"   name="identificacion"   [(ngModel)]="restaurante.identificacionDueno"  class="form-control"   />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2" style="max-width:100%">
+                    <p>Nombre: </p>
+                </div>
+                <div class="col-sm-4" style="max-width:100%">
+                    <input type="text" style="text-transform: uppercase"   name="nombre"   [(ngModel)]="restaurante.nombre"  class="form-control"   />
+                </div>
+                <div class="col-sm-2" style="max-width:100%">
+                    <p>Apellido: </p>
+                </div>
+                <div class="col-sm-4" style="max-width:100%">
+                    <input type="text" style="text-transform: uppercase"   name="apellido"   [(ngModel)]="restaurante.apellido"  class="form-control"   />
+                </div>
+            </div>
+            <hr />
+
+
+            <div class="row">
+                <div class=" col-sm-2 " style="max-width:100% ">
+                    <button class="btn btn-success " (click)="agregar() ">Registrar</button>
+                </div>
+                <div class="col-sm-4 " style="max-width:100% ">
+                    <button class="btn btn-danger "  [routerLink]="[ '/Registro'] ">Cancelar</button>
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>

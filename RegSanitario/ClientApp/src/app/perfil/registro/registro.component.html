@@ -3,46 +3,30 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h1>Registro</h1>
-            <form >
-                <h5>Seleccione tipo a registrar </h5>
+            <h5>Seleccione tipo a registrar </h5>
 
-                <button name="Restaurante"  class="btn btn-dark" (click)="showr()">Restaurante</button>
-                <button name="Restaurante"  class="btn btn-dark" (click)="showm()">Manipulador</button>
-
-                <hr />
-                <div id="formrest"   class="form-group" style="display: none">
-                    <div class="form-group">
-                        <label>Identificacion</label>
-                        <input type="text"   name="identificacion"   [(ngModel)]="restaurante.identificaciondueno"  class="form-control"   />
+            <hr />
+            <div class="card-columns">
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/Restaurante.png" alt="Card image cap">
+                    <h5 class="card-title">Establecimiento</h5>
+                    <div class="card-body">
+                        <button type="button" class="btn btn-outline-primary btn-block" [routerLink]="['/Restaurante']">
+                            Seleccionar
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label>Nombre Dueño</label>
-                        <input type="text"   name="nombre"   [(ngModel)]="restaurante.dueno"  class="form-control"   />
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="assets/images/Manipuladores.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Manipulador de Alimentos </h5>
+                        <button type="button" class="btn btn-outline-primary btn-block" [routerLink]="['/Manipulador']"> 
+                            Seleccionar
+                        </button>
                     </div>
-                    <div class="form-group">
+                </div>
+            </div>
+            </div>
 
-                        <label>Nombre Restaurante</label>
-                        <input type="text"   name="nombreres"   [(ngModel)]="restaurante.nombrerestaurante"  class="form-control"   />
-                    </div>
-                    <div class="form-group">
-                        <label>Direccion</label>    <input type="text"   name="direccion"   [(ngModel)]="restaurante.direccion"  class="form-control"   />
-                    </div>
-                    <div class="form-group text-center">
-                        <button class="btn btn-success" (click)="agregar()">Registrar</button>
-                            <button class="btn btn-danger"  type="reset">Cancelar</button>
-                                </div>
-                                </div>
-
-                                <div id="formman"   class="form-group" style="display: none">
-
-
-                                    <h5>Solo tengo programado con restaurante</h5>
-
-                                </div>
-
-                                </form>
-
-                                </div>
-
-                                </div>
-                                </div>
+            </div>
+            </div>

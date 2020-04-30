@@ -11,37 +11,7 @@ import { RestauranteService } from '../../services/restaurante.service';
 })
 export class RegistroComponent implements OnInit {
 
-  restaurante : Restaurante;
-  constructor(private _restauranteService : RestauranteService) {
-    this.restaurante = new Restaurante();
-   }
-
-  ngOnInit() {
-    this.restaurante = new Restaurante();  
-  }
-
-  agregar() {
-    console.log(this.restaurante);
-    this._restauranteService.post(this.restaurante).subscribe(p => {
-      if (p != null) {
-        this.restaurante = p;
-        alert('Guardado Correctamente');
-      }else{
-        alert('Error');
-
-      }
-    });
-  }
-  showr(){
-    document.getElementById('formrest').style.display = 'block';
-    document.getElementById('formman').style.display = 'none';
-
-  }
-  showm(){
-    document.getElementById('formman').style.display = 'block';
-    document.getElementById('formrest').style.display = 'none';
-
+  constructor() { }
+  ngOnInit(): void  {
   }
 }
-
-  

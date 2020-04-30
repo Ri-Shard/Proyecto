@@ -1,10 +1,12 @@
 export class Restaurante {
-       
-    dueno:string;
-    identificaciondueno:string;
-    nombrerestaurante: string;
-    direccion:string;
-    evaluacion:string;
+
+    nombre: string;
+    apellido: string;
+    identificacionDueno: string;
+    nombreRestaurante: string;
+    direccion: string;
+    evaluacion: string;
+    nit: string;
 }
 
 

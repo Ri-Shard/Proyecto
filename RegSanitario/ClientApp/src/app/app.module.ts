@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -16,9 +16,10 @@ import { InformateComponent } from './perfil/informate/informate.component';
 import { NormatividadComponent } from './info/normatividad/normatividad.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { FiltroPipe } from './pipe/filtro.pipe';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 
 @NgModule({
-  declarations: [
+   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -29,18 +30,21 @@ import { FiltroPipe } from './pipe/filtro.pipe';
     InformateComponent,
     NormatividadComponent,
     FooterComponent,
-    FiltroPipe
+    FiltroPipe,
+    AlertModalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
     ]),
     AppRoutingModule
   ],
+  entryComponents: [AlertModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

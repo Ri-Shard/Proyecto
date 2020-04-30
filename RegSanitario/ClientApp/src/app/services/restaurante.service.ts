@@ -34,4 +34,5 @@ export class RestauranteService {
         catchError(this.handleErrorService.handleError<Restaurante>('Registrar Restaurante', null))
      );
   }
+
 }

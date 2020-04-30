@@ -3,6 +3,8 @@ import { templateJitUrl } from '@angular/compiler';
 import {Restaurante} from '../models/restaurante';
 import { RestauranteService } from '../../services/restaurante.service';
 import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-restaurante',
   templateUrl: './restaurante.component.html',
@@ -12,7 +14,7 @@ export class RestauranteComponent implements OnInit {
 
   formGroup: FormGroup;
   restaurante: Restaurante;
-  constructor(private _restauranteService: RestauranteService, private formBuilder: FormBuilder) {}
+  constructor(private _restauranteService: RestauranteService, private formBuilder: FormBuilder, private modalService: NgbModal) {}
 
   ngOnInit() {
     this.buildForm();
@@ -25,10 +27,14 @@ export class RestauranteComponent implements OnInit {
     this.restaurante = this.formGroup.value;
     this._restauranteService.post(this.restaurante).subscribe(p => {
       if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent);
+          messageBox.componentInstance.title = 'Resultado Operación';
+          messageBox.componentInstance.message = 'Persona creada!!! :-)';
         this.restaurante = p;
-        alert('Guardado Correctamente');
       } else {
-        alert('Error');
+        const messageBox = this.modalService.open(AlertModalComponent);
+        messageBox.componentInstance.title = 'Resultado Operación';
+        messageBox.componentInstance.message = 'ERROR!!! :-)';
 
       }
     });

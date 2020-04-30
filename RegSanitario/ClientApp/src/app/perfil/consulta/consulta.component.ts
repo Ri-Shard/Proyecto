@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Restaurante} from '../models/restaurante';
+import { Restaurante } from '../models/restaurante';
 import { RestauranteService } from '../../services/restaurante.service';
 import { Router } from '@angular/router';
 
@@ -33,4 +33,5 @@ export class ConsultaComponent implements OnInit {
     document.getElementById('form2').style.display = 'none';
 
   }
+
 }

@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class ConsultaComponent implements OnInit {
 
-  restaurantes : Restaurante[];
-  restaurante : Restaurante;
-  constructor(private _restauranteService : RestauranteService,
+  restaurantes: Restaurante[];
+  restaurante: Restaurante;
+  searchText: string;
+  constructor(private _restauranteService: RestauranteService,
     private router: Router
     ) { }
 
@@ -22,12 +23,12 @@ export class ConsultaComponent implements OnInit {
     });
   }
 
-  showr(){
+  showr() {
     document.getElementById('form2').style.display = 'block';
     document.getElementById('form1').style.display = 'none';
 
   }
-  showm(){
+  showm() {
     document.getElementById('form1').style.display = 'block';
     document.getElementById('form2').style.display = 'none';
 

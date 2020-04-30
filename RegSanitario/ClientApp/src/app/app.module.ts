@@ -15,6 +15,7 @@ import { ConsultaComponent } from './perfil/consulta/consulta.component';
 import { InformateComponent } from './perfil/informate/informate.component';
 import { NormatividadComponent } from './info/normatividad/normatividad.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { FiltroPipe } from './pipe/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './component/footer/footer.component';
     ConsultaComponent,
     InformateComponent,
     NormatividadComponent,
-    FooterComponent
+    FooterComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

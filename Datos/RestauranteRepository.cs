@@ -19,16 +19,16 @@ namespace Datos
         {
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = @"Insert Into Restaurantes (Nombre,Apellido,IdentificacionDueño,NombreRestaurante,Direccion,Evaluacion,Nit) 
-                                        values (@Nombre,@Apellido,@IdentificacionDueño,@NombreRestaurante,@Direccion,@Evaluacion,@Nit)";
-                command.Parameters.AddWithValue("@Nombre", restaurante.Nombre);
-                command.Parameters.AddWithValue("@Apellido", restaurante.Apellido);
-                command.Parameters.AddWithValue("@IdentificacionDueño", restaurante.IdentificacionDueno);
+                command.CommandText = @"Insert Into Restaurantes (NombreRestaurante,Direccion,Evaluacion,Nit,Estado,Idueño) 
+                                        values (@NombreRestaurante,@Direccion,@Evaluacion,@Nit,@Estado,@Idueño)";
                 command.Parameters.AddWithValue("@NombreRestaurante", restaurante.NombreRestaurante);
                 command.Parameters.AddWithValue("@Direccion", restaurante.Direccion);
                 command.Parameters.AddWithValue("@Evaluacion", restaurante.Evaluacion);
                 command.Parameters.AddWithValue("@Nit", restaurante.Nit);
+                command.Parameters.AddWithValue("@Estado", restaurante.Estado);
+                command.Parameters.AddWithValue("@Idueño", restaurante.Id);
                 var filas = command.ExecuteNonQuery();
+                
             }
         }
 
@@ -65,18 +65,16 @@ namespace Datos
             }
         }
 
-
         private Restaurante DataReaderMapToRestaurante(SqlDataReader dataReader)
         {
             if(!dataReader.HasRows) return null;
             Restaurante restaurante = new Restaurante();
-            restaurante.Nombre = (string)dataReader["Nombre"];
-            restaurante.Apellido = (string)dataReader["Apellido"];
-            restaurante.IdentificacionDueno = (string)dataReader["IdentificacionDueño"];
             restaurante.NombreRestaurante = (string)dataReader["NombreRestaurante"];
             restaurante.Direccion = (string)dataReader["Direccion"];
+            restaurante.Estado = (string)dataReader["Estado"];
             restaurante.Evaluacion = (string)dataReader["Evaluacion"];
             restaurante.Nit = (string)dataReader["Nit"];
+            restaurante.Id = (string)dataReader["Idueño"];
             return restaurante;
             
          }

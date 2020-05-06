@@ -17,6 +17,7 @@ import { NormatividadComponent } from './info/normatividad/normatividad.componen
 import { FooterComponent } from './component/footer/footer.component';
 import { FiltroPipe } from './pipe/filtro.pipe';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
    declarations: [
@@ -31,7 +32,8 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     NormatividadComponent,
     FooterComponent,
     FiltroPipe,
-    AlertModalComponent
+    AlertModalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

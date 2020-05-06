@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import { Restaurante } from '../perfil/models/restaurante';
+import { Dueño } from '../perfil/models/Dueño';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RestauranteService {
+export class DueñoService {
 
   baseUrl: string;
 
@@ -21,17 +21,17 @@ export class RestauranteService {
   }
 
 
-  get(): Observable<Restaurante[]> {
-     return this.http.get<Restaurante[]>(this.baseUrl + 'api/Restaurante').pipe(
+  get(): Observable<Dueño[]> {
+     return this.http.get<Dueño[]>(this.baseUrl + 'api/Dueño').pipe(
         tap(_ => this.handleErrorService.log('datos recibidos')),
-        catchError(this.handleErrorService.handleError<Restaurante[]>('Consulta Restaurante', null))
+        catchError(this.handleErrorService.handleError<Dueño[]>('Consulta Dueño', null))
      );
   }
 
-  post(restaurante: Restaurante): Observable<Restaurante> {
-     return this.http.post<Restaurante>(this.baseUrl + 'api/Restaurante', restaurante).pipe(
+  post(dueño: Dueño): Observable<Dueño> {
+     return this.http.post<Dueño>(this.baseUrl + 'api/Dueño', dueño).pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
-        catchError(this.handleErrorService.handleError<Restaurante>('Registrar Restaurante', null))
+        catchError(this.handleErrorService.handleError<Dueño>('Registrar Dueño', null))
      );
   }
 

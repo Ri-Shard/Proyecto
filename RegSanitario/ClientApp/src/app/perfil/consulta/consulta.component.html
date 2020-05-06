@@ -3,7 +3,7 @@
 
         <div class="col-6">
 
-            <input [(ngModel)]="searchText"  type="text"  class="form-control"  placeholder="Type to filter">
+            <input [(ngModel)]="searchText"  type="text"  class="form-control"  placeholder="Introduzca el NIT a buscar">
 </div>
 </div>
 <hr />
@@ -16,6 +16,7 @@
             <th scope="col">Nit</th>
             <th scope="col">Nombre</th>
             <th scope="col">Direccion</th>
+            <th scope="col">Estado</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
             <td>{{ restaurante.nit }}</td>
             <td>{{ restaurante.nombreRestaurante}}</td>
             <td>{{ restaurante.direccion }}</td>
+            <td class="text-danger">{{ restaurante.estado }}</td>
 
             <button class="btn btn-success" (click)="showr()">Mas</button>
                 <button class="btn btn-danger">Borrar</button>

@@ -7,6 +7,9 @@ export class Restaurante {
     direccion: string;
     evaluacion: string;
     nit: string;
+    estado: string;
+    id: string;
+
 }
 
 

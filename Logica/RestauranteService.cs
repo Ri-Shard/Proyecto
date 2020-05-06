@@ -59,7 +59,6 @@ namespace Logica
             return restaurantes;
         }
 
-
         
     }
 }

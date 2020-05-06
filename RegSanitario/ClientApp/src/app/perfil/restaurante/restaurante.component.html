@@ -3,7 +3,7 @@
         <div class="card-header text-md-center">
             <h2>Registrar Establecimiento </h2>
         </div>
-        <form [formGroup]="formGroup">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
             <div class="card-body">
                 <h6>Informacion Restaurante</h6>
@@ -13,72 +13,60 @@
                         <p>NIT: </p>
                     </div>
                     <div class="col-sm-4" style="max-width:100%">
-                        <input type="text"   name="nit"  formControlName="nit"  class="form-control" tabindex="17"   [ngClass]="{ 'is-invalid':control.nit.errors}" />
-                        <div *ngIf="control.nit.errors" class="invalid-feedback">
-                            <div *ngIf="control.nit.errors.required">Se require el NIT</div>
-                        </div>
+                        <input type="text"   name="nit"  formControlName="nit"  class="form-control" tabindex="17"  [class.is-invalid]="nitinvalido" />
+                        <div *ngIf="nitinvalido" class="text-danger">Se require el NIT</div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="form-group row">
                     <div class="col-sm-2" style="max-width:100%">
                         <p>Nombre Restaurante: </p>
                     </div>
                     <div class="col-sm-4" style="max-width:100%">
-                        <input type="text"   name="nombreres" maxlength="50"   formControlName="nombreRestaurante"  class="form-control"  tabindex="17" [ngClass]="{ 'is-invalid':control.nombreRestaurante.errors}" />
-                        <div *ngIf="control.nombreRestaurante.errors" class="invalid-feedback">
-                            <div *ngIf="control.nombreRestaurante.errors.required">Se requiere el Nombre del Establecimiento</div>
-                        </div>
+                        <input type="text"   name="nombreres" maxlength="50"   formControlName="nombreRestaurante"  class="form-control"  tabindex="17" [class.is-invalid]="nombreResinvalido" />
+                        <div *ngIf="nombreResinvalido" class="text-danger">Se requiere el Nombre del Establecimiento</div>
                     </div>
                     <div class="col-sm-2" style="max-width:100%">
                         <p>Direccion: </p>
                     </div>
                     <div class="col-sm-4" style="max-width:100%">
-                        <input type="text"   name="direccion"  maxlength="50"  formControlName="direccion"  class="form-control"  tabindex="17" [ngClass]="{ 'is-invalid':control.direccion.errors}" />
-                        <div *ngIf="control.direccion.errors" class="invalid-feedback">
-                            <div *ngIf="control.direccion.errors.required">Se requiere la Direccion del Establecimiento</div>
-                        </div>
+                        <input type="text"   name="direccion"  maxlength="50"  formControlName="direccion"  class="form-control"  tabindex="17" [class.is-invalid]="direccioninvalido" />
+                        <div *ngIf="direccioninvalido" class="text-danger">Se requiere la Direccion del Establecimiento</div>
                     </div>
                 </div>
                 <hr />
                 <h6>Informacion Dueño</h6>
                 <hr />
-                <div class="row">
-                    <div class="col-sm-2" style="max-width:100%">
+                <div class=" form-group row ">
+                    <div class="col-sm-2 " style="max-width:100% ">
                         <p>Identificacion: </p>
                     </div>
-                    <div class="col-sm-4" style="max-width:100%">
-                        <input type="text"   name="identificacion"   formControlName="identificacionDueno"  class="form-control" [ngClass]="{ 'is-invalid':control.identificacionDueno.errors}"   />
-                        <div *ngIf="control.identificacionDueno.errors" class="invalid-feedback">
-                            <div *ngIf="control.identificacionDueno.errors.required">Se requiere la Identificacion del Dueño del establecimiento</div>
-                        </div>
+                    <div class="col-sm-4 " style="max-width:100% ">
+                        <input type="text "   name="id "   formControlName="id"  class="form-control " [class.is-invalid]="IDdinvalido"   />
+                        <div *ngIf="IDdinvalido" class="text-danger">Se requiere la Identificacion del Dueño del establecimiento</div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-2" style="max-width:100%">
+                <div class="form-group row ">
+                    <div class="col-sm-2 " style="max-width:100% ">
                         <p>Nombre: </p>
                     </div>
-                    <div class="col-sm-4" style="max-width:100%">
-                        <input type="text" style="text-transform: uppercase"   name="nombre"   formControlName="nombre"  class="form-control" [ngClass]="{'is-invalid' : control.nombre.errors}"   />
-                        <div *ngIf="control.nombre.errors" class="invalid-feedback">
-                            <div *ngIf="control.nombre.errors.required">Se requiere el Nombre del Dueño del establecimiento</div>
-                        </div>
+                    <div class="col-sm-4 " style="max-width:100% ">
+                        <input type="text " style="text-transform: uppercase "   name="nombre"   formControlName="nombre"  class="form-control " [class.is-invalid]="Nombredinvalido" />
+                        <div *ngIf="Nombredinvalido" class="text-danger">Se requiere el Nombre del Dueño del establecimiento</div>
                     </div>
                     <div class=" col-sm-2 " style="max-width:100% ">
                         <p>Apellido: </p>
                     </div>
                     <div class="col-sm-4 " style="max-width:100% ">
-                        <input type="text " style="text-transform: uppercase "   name="apellido"   formControlName="apellido"  class="form-control" [ngClass]="{'is-invalid' : control.apellido.errors}"   />
-                        <div *ngIf="control.apellido.errors" class="invalid-feedback">
-                            <div *ngIf="control.apellido.errors.required">Se requiere el Apellido del Dueño del establecimiento</div>
-                        </div>
+                        <input type="text " style="text-transform: uppercase "   name="apellido "   formControlName="apellido"  class="form-control " [class.is-invalid]="Apellidodinvalido" />
+                        <div *ngIf="Apellidodinvalido" class="text-danger">Se requiere el Apellido del Dueño del establecimiento</div>
                     </div>
                 </div>
                 <hr />
 
 
-                <div class="row ">
+                <div class="form-group row ">
                     <div class=" col-sm-2 " style="max-width:100% ">
-                        <button class="btn btn-success " (click)="onSubmit() " [disabled]="formGroup.invalid">Registrar</button>
+                        <button type="submit"  class="btn btn-success " (click)="onSubmit() " [disabled]="formGroup.invalid">Registrar</button>
                     </div>
                     <div class="col-sm-4 " style="max-width:100% ">
                         <button class="btn btn-danger "  [routerLink]="[ '/Registro'] ">Cancelar</button>

@@ -43,14 +43,14 @@ namespace RegSanitario.Controllers
       }
       private Restaurante mapearRestaurante(RestauranteInputModel restauranteInput){
           Restaurante restaurante = new Restaurante();
-          restaurante.Nombre = restauranteInput.Nombre;
-          restaurante.Apellido = restauranteInput.Apellido;
-          restaurante.IdentificacionDueno = restauranteInput.IdentificacionDueno;
           restaurante.NombreRestaurante = restauranteInput.NombreRestaurante;
           restaurante.Direccion = restauranteInput.Direccion;
           restaurante.Evaluacion = restauranteInput.Evaluacion;
           restaurante.Nit = restauranteInput.Nit;
+          restaurante.Estado = restauranteInput.Estado;
+          restaurante.Id = restauranteInput.Id;
           return restaurante;
       }
+
     }
 }

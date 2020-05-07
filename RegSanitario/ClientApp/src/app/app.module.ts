@@ -18,6 +18,11 @@ import { FooterComponent } from './component/footer/footer.component';
 import { FiltroPipe } from './pipe/filtro.pipe';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { LoginComponent } from './component/login/login.component';
+import { GestionComponent } from './perfil/gestion/gestion.component';
+import { ModificarComponent } from './gestiones/modificar/modificar.component';
+import { EliminarComponent } from './gestiones/eliminar/eliminar.component';
+import { ConsultarComponent } from './gestiones/consultar/consultar.component';
+import { MasComponent } from './gestiones/mas/mas.component';
 
 @NgModule({
    declarations: [
@@ -33,7 +38,12 @@ import { LoginComponent } from './component/login/login.component';
     FooterComponent,
     FiltroPipe,
     AlertModalComponent,
-    LoginComponent
+    LoginComponent,
+    GestionComponent,
+    ModificarComponent,
+    EliminarComponent,
+    ConsultarComponent,
+    MasComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
